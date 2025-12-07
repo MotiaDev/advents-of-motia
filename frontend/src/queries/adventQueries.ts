@@ -19,8 +19,10 @@ interface ApiResponse<T> {
   error?: string;
 }
 
+const API_URL = import.meta.env.VITE_API_URL || '';
+
 async function fetchAdventDays(): Promise<ApiResponse<AdventDay[]>> {
-  const response = await fetch('/api/advent-days');
+  const response = await fetch(`${API_URL}/api/advent-days`);
   if (!response.ok) {
     throw new Error('Failed to fetch advent days');
   }
@@ -28,7 +30,7 @@ async function fetchAdventDays(): Promise<ApiResponse<AdventDay[]>> {
 }
 
 async function fetchAdventDay(day: number): Promise<ApiResponse<AdventDay>> {
-  const response = await fetch(`/api/advent-days/${day}`);
+  const response = await fetch(`${API_URL}/api/advent-days/${day}`);
   if (!response.ok) {
     throw new Error(`Failed to fetch day ${day}`);
   }

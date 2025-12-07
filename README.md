@@ -1,4 +1,4 @@
-# 🎄 Advent of Motia
+# 🎄 Advent of Backends
 
 A beautiful, Christmas-themed showcase of **30 Days of Backend Magic** built with [Motia](https://motia.dev) backend and [TanStack](https://tanstack.com) frontend.
 
@@ -7,15 +7,14 @@ A beautiful, Christmas-themed showcase of **30 Days of Backend Magic** built wit
 ## 🎁 What is This?
 
 An interactive advent calendar showcasing real-world Motia examples, from AI agents to workflow automation. Each day unlocks a new backend pattern with:
-- 📖 Detailed explanations
-- 🐦 Twitter thread links
+- 📖 Detailed technical explanations
+- 🐦 Twitter/X thread links
 - 💻 GitHub example repositories
-- ✨ Beautiful, mobile-responsive UI
+- ✨ Beautiful, mobile-responsive UI with light/dark mode
 
 ## 🚀 Live Demo
 
-- **Frontend**: [Deployed on Vercel](#) _(Coming soon)_
-- **Backend API**: `https://54d5zu-k4ft3c.hub.motia.cloud`
+- **Frontend**: [Deployed on Vercel](https://advent-of-motia.vercel.app)
 
 ## 🛠️ Tech Stack
 
@@ -37,7 +36,7 @@ An interactive advent calendar showcasing real-world Motia examples, from AI age
   - Glassmorphism effects
   - Mobile-responsive design
   - Embedded tweets via `react-tweet`
-  - Festive color palette
+  - Light/Dark mode toggle
 
 ## 🏃 Quick Start
 
@@ -109,6 +108,7 @@ Each day showcases a real Motia example from the [motia-examples](https://github
 
 ```bash
 # Deploy to Motia Cloud
+# IMPORTANT: Set your API Key in your environment, do not commit it!
 export MOTIA_API_KEY=your-api-key
 npx motia@latest cloud deploy --version-name "1.0.0"
 ```

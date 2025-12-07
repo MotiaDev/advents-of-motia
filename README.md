@@ -1,106 +1,162 @@
-# advent-of-motia
+# 🎄 Advent of Motia
 
-A Motia project created with the **multi-language** starter template (TypeScript + Python).
+A beautiful, Christmas-themed showcase of **30 Days of Backend Magic** built with [Motia](https://motia.dev) backend and [TanStack](https://tanstack.com) frontend.
 
-## What is Motia?
+![Advent Calendar](https://img.shields.io/badge/Days-30-red?style=for-the-badge&logo=calendar) ![Motia](https://img.shields.io/badge/Backend-Motia-blue?style=for-the-badge) ![TanStack](https://img.shields.io/badge/Frontend-TanStack-orange?style=for-the-badge)
 
-Motia is an open-source, unified backend framework that eliminates runtime fragmentation by bringing **APIs, background jobs, queueing, streaming, state, workflows, AI agents, observability, scaling, and deployment** into one unified system using a single core primitive, the **Step**.
+## 🎁 What is This?
 
-## Polyglot Architecture
+An interactive advent calendar showcasing real-world Motia examples, from AI agents to workflow automation. Each day unlocks a new backend pattern with:
+- 📖 Detailed explanations
+- 🐦 Twitter thread links
+- 💻 GitHub example repositories
+- ✨ Beautiful, mobile-responsive UI
 
-This template demonstrates Motia's polyglot capabilities by combining:
+## 🚀 Live Demo
 
-- **TypeScript**: API endpoint (`hello-api.step.ts`) - handles HTTP requests
-- **Python**: Event processor (`process_greeting_step.py`) - handles background processing
-- **JavaScript**: Logger (`log-greeting.step.js`) - handles workflow completion
+- **Frontend**: [Deployed on Vercel](#) _(Coming soon)_
+- **Backend API**: `https://54d5zu-k4ft3c.hub.motia.cloud`
 
-This shows how you can use the best language for each task while keeping everything in a single unified system.
+## 🛠️ Tech Stack
 
-## Quick Start
+### Backend (Motia)
+- **Framework**: [Motia](https://motia.dev) - Production-grade backend framework
+- **Language**: TypeScript
+- **API Endpoints**:
+  - `GET /api/advent-days` - List all days
+  - `GET /api/advent-days/:day` - Get specific day details
+
+### Frontend (TanStack)
+- **Build Tool**: Vite
+- **Framework**: React 18
+- **Router**: TanStack Router (file-based routing)
+- **Data Fetching**: TanStack Query
+- **Styling**: Custom CSS with Christmas theme
+- **Features**: 
+  - Snowfall animation
+  - Glassmorphism effects
+  - Mobile-responsive design
+  - Embedded tweets via `react-tweet`
+  - Festive color palette
+
+## 🏃 Quick Start
+
+### Prerequisites
+- Node.js 18+ 
+- npm/yarn/pnpm
+
+### Development
 
 ```bash
-# Start the development server
+# Install dependencies
+npm install
+
+# Start backend (Motia) on port 3000
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
-This starts the Motia runtime and the **Workbench** - a powerful UI for developing and debugging your workflows. By default, it's available at [`http://localhost:3000`](http://localhost:3000).
-
-```bash
-# Test your first endpoint
-curl http://localhost:3000/hello
-```
-
-## How It Works
-
-1. **TypeScript API Step** receives the HTTP request at `/hello`
-2. It emits a `process-greeting` event with the request data
-3. **Python Event Step** picks up the event, processes it, and stores the result in state
-4. Python emits a `greeting-processed` event
-5. **JavaScript Event Step** logs the completed workflow
-
-## Step Types
-
-Every Step has a `type` that defines how it triggers:
-
-| Type | When it runs | Use case |
-|------|--------------|----------|
-| **`api`** | HTTP request | REST APIs, webhooks |
-| **`event`** | Event emitted | Background jobs, workflows |
-| **`cron`** | Schedule | Cleanup, reports, reminders |
-
-## Development Commands
-
-```bash
-# Start Workbench and development server
+# In another terminal, start frontend on port 5173
+cd frontend
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-
-# Start production server (without hot reload)
-npm run start
-# or
-yarn start
-# or
-pnpm start
-
-# Generate TypeScript types from Step configs
-npm run generate-types
-# or
-yarn generate-types
-# or
-pnpm generate-types
-
-# Build project for deployment
-npm run build
-# or
-yarn build
-# or
-pnpm build
 ```
 
-## Project Structure
+Visit:
+- **Frontend**: http://localhost:5173
+- **Backend**: http://localhost:3000
+- **Motia Workbench**: http://localhost:3000/_workbench
+
+## 📁 Project Structure
 
 ```
-steps/                           # Your Step definitions
-├── hello/
-│   ├── hello-api.step.ts       # TypeScript API endpoint
-│   ├── process_greeting_step.py # Python event processor
-│   └── log-greeting.step.js    # JavaScript logger
-motia.config.ts                  # Motia configuration
-requirements.txt                 # Python dependencies
+advent-of-motia/
+├── steps/                          # Motia backend steps
+│   ├── get-advent-days.step.ts    # GET /api/advent-days
+│   └── get-advent-day.step.ts     # GET /api/advent-days/:day
+├── frontend/                       # TanStack frontend
+│   ├── src/
+│   │   ├── routes/                # File-based routing
+│   │   │   ├── index.tsx          # Home page (calendar grid)
+│   │   │   ├── day/
+│   │   │   │   └── $dayNumber.tsx # Day detail page
+│   │   │   └── __root.tsx         # Root layout
+│   │   ├── queries/
+│   │   │   └── adventQueries.ts   # TanStack Query hooks
+│   │   ├── styles/                # CSS modules
+│   │   └── main.tsx               # App entry
+│   ├── public/
+│   │   └── motia-icon.svg         # Gift box favicon
+│   └── vite.config.ts
+├── motia.config.ts                 # Motia configuration
+└── package.json
 ```
 
-Steps are auto-discovered from your `steps/` or `src/` directories - no manual registration required.
+## 🎯 Featured Examples
 
-## Learn More
+Each day showcases a real Motia example from the [motia-examples](https://github.com/MotiaDev/motia-examples) repository:
 
-- [Documentation](https://motia.dev/docs) - Complete guides and API reference
-- [Quick Start Guide](https://motia.dev/docs/getting-started/quick-start) - Detailed getting started tutorial
-- [Core Concepts](https://motia.dev/docs/concepts/overview) - Learn about Steps and Motia architecture
-- [Discord Community](https://discord.gg/motia) - Get help and connect with other developers
+1. **GitHub → Notion Sync** - Webhook automation
+2. **AI Chat Agent with Memory** - Stateful AI conversations
+3. **AI vs AI Tic-Tac-Toe** - Multi-agent game
+4. **Telegram + Gmail Automation** - Cross-platform workflows
+5. **Airbnb Guest Assistant** - Property management automation
+6. **LangGraph Lead Scoring** - AI-powered lead qualification
+7. **Multi-Agent Game Generation** - Collaborative AI systems
+... and 23 more days to come!
+
+## 🚀 Deployment
+
+### Backend (Motia Cloud)
+
+```bash
+# Deploy to Motia Cloud
+export MOTIA_API_KEY=your-api-key
+npx motia@latest cloud deploy --version-name "1.0.0"
+```
+
+Learn more: [Motia Cloud Deployment Guide](https://www.motia.dev/docs/deployment-guide/motia-cloud/deployment)
+
+### Frontend (Vercel)
+
+```bash
+# Deploy via CLI
+cd frontend
+npx vercel
+
+# Or via Vercel Dashboard
+# 1. Import GitHub repo
+# 2. Set Root Directory: frontend
+# 3. Add env: VITE_API_URL=https://your-motia-backend.cloud
+# 4. Deploy!
+```
+
+## 🎨 Theme & Design
+
+- **Colors**: Warm festive palette (deep reds, golds, forest greens)
+- **Effects**: Snowfall animation, glassmorphism cards
+- **Typography**: Playfair Display (headings) + Inter (body)
+- **Mobile-First**: Fully responsive design
+- **Accessibility**: Semantic HTML, ARIA labels
+
+## 📚 Learn More
+
+### About Motia
+- [Documentation](https://motia.dev/docs)
+- [GitHub](https://github.com/MotiaDev/motia)
+- [Examples](https://github.com/MotiaDev/motia-examples)
+- [Discord Community](https://discord.gg/motia)
+
+### About TanStack
+- [TanStack Router](https://tanstack.com/router)
+- [TanStack Query](https://tanstack.com/query)
+
+## 🤝 Contributing
+
+Found a bug or want to add a day? Open an issue or PR!
+
+## 📄 License
+
+MIT
+
+---
+
+**Built with ❤️ using Motia & TanStack**

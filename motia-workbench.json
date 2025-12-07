@@ -17,5 +17,18 @@
         "sourceHandlePosition": "right"
       }
     }
+  },
+  {
+    "id": "advent-calendar",
+    "config": {
+      "steps/get-advent-days.step.ts": {
+        "x": -102,
+        "y": -9
+      },
+      "steps/get-advent-day.step.ts": {
+        "x": 358,
+        "y": -1
+      }
+    }
   }
 ]

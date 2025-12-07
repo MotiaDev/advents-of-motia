@@ -3,7 +3,9 @@ export const config = {
   type: 'api',
   path: '/api/advent-days',
   method: 'GET',
-  emits: []
+  emits: [],
+  flows: ['advent-calendar'],
+  virtualEmits: [{ topic: 'day.selected', label: 'User selects a day' }]
 };
 
 export const handler = async (req, { logger }) => {

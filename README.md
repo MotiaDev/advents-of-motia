@@ -14,7 +14,7 @@ An interactive advent calendar showcasing real-world Motia examples, from AI age
 
 ## 🚀 Live Demo
 
-- **Frontend**: [Deployed on Vercel](https://advent-of-motia.vercel.app)
+- **Frontend**: [Deployed on Vercel](https://advent-of-backends.vercel.app/)
 
 ## 🛠️ Tech Stack
 

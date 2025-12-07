@@ -1,0 +1,117 @@
+.header {
+  background: rgba(15, 23, 42, 0.4); /* More transparent */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  padding: 1.25rem 0;
+  transition: background 0.3s ease;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+  font-family: 'Mountains of Christmas', cursive;
+  letter-spacing: 0.05em;
+  transition: transform 0.2s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.logo-icon {
+  filter: drop-shadow(0 0 10px rgba(196, 30, 58, 0.6));
+  color: var(--christmas-red);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--christmas-gold);
+  transition: width 0.3s ease;
+  box-shadow: 0 0 5px var(--christmas-gold);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.footer {
+  margin-top: auto;
+  padding: 4rem 0;
+  text-align: center;
+  background: linear-gradient(to top, rgba(2, 6, 23, 0.8) 0%, transparent 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.footer-message {
+  font-family: 'Mountains of Christmas', cursive;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: var(--christmas-cream);
+}
+
+.footer-powered-by {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-powered-by a {
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.text-gold {
+  color: var(--christmas-gold) !important;
+  text-shadow: 0 0 10px rgba(251, 191, 36, 0.2);
+}
+
+.text-muted-link {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.text-muted-link:hover {
+  color: white !important;
+}

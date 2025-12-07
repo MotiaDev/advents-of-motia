@@ -1,0 +1,28 @@
+{
+  "name": "advent-of-motia-frontend",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.62.0",
+    "@tanstack/react-query-devtools": "^5.62.0",
+    "@tanstack/react-router": "^1.91.0",
+    "@tanstack/router-devtools": "^1.91.0",
+    "lucide-react": "^0.556.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-tweet": "^3.2.2"
+  },
+  "devDependencies": {
+    "@tanstack/router-vite-plugin": "^1.91.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.1"
+  }
+}

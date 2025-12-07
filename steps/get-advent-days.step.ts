@@ -9,14 +9,14 @@ export const config = {
 export const handler = async (req, { logger }) => {
   logger.info('Fetching all advent days');
   
-  const adventDays = [
+  const existingDays = [
     {
       day: 1,
       title: 'GitHub to Notion Sync',
       description: 'Sync your GitHub issues to Notion seamlessly.',
       tweetId: '1994004171989692599',
       unlocked: true,
-      date: '2025-12-01',
+      date: 'Monday',
       githubExample: 'github-notion-sync',
       githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/github-notion-sync'
     },
@@ -26,7 +26,7 @@ export const handler = async (req, { logger }) => {
       description: 'Build an AI agent that remembers context.',
       tweetId: '1994393178154336297',
       unlocked: true,
-      date: '2025-12-02',
+      date: 'Tuesday',
       githubExample: 'ai-chat-agent-with-memory',
       githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-chat-agent-with-memory'
     },
@@ -36,7 +36,7 @@ export const handler = async (req, { logger }) => {
       description: 'Watch two AI agents battle it out.',
       tweetId: '1995552167621787887',
       unlocked: true,
-      date: '2025-12-03',
+      date: 'Wednesday',
       githubExample: 'ai-vs-ai-tictactoe-game',
       githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-vs-ai-tictactoe-game'
     },
@@ -46,7 +46,7 @@ export const handler = async (req, { logger }) => {
       description: 'Automate your communication workflows.',
       tweetId: '1995900288750747884',
       unlocked: true,
-      date: '2025-12-04',
+      date: 'Thursday',
       githubExample: 'telegram-gmail-automation',
       githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/telegram-gmail-automation'
     },
@@ -56,7 +56,7 @@ export const handler = async (req, { logger }) => {
       description: 'Automate guest communication for Airbnb.',
       tweetId: '1996298241550209236',
       unlocked: true,
-      date: '2025-12-05',
+      date: 'Friday',
       githubExample: 'airbnb-property-guest-assistant',
       githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/airbnb-property-guest-assistant'
     },
@@ -66,7 +66,7 @@ export const handler = async (req, { logger }) => {
       description: 'Intelligent lead scoring powered by AI.',
       tweetId: '1996730187191382320',
       unlocked: true,
-      date: '2025-12-06',
+      date: 'Saturday',
       githubExample: 'motia-langgraph-lead-scoring',
       githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/motia-langgraph-lead-scoring'
     },
@@ -76,17 +76,35 @@ export const handler = async (req, { logger }) => {
       description: 'Generate games using multiple AI agents.',
       tweetId: '1997006292104499451',
       unlocked: true,
-      date: '2025-12-07',
+      date: 'Sunday',
       githubExample: 'multi-agent-game-generation',
       githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/multi-agent-game-generation'
     }
   ];
 
+  // Generate remaining days 8-30
+  const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  const allDays = [...existingDays];
+
+  for (let i = 8; i <= 30; i++) {
+    const dayOfWeek = daysOfWeek[(i - 1) % 7];
+    allDays.push({
+      day: i,
+      title: `Day ${i} Surprise`,
+      description: 'Coming soon! A new backend adventure awaits.',
+      tweetId: '',
+      unlocked: false,
+      date: dayOfWeek,
+      githubExample: '',
+      githubUrl: ''
+    });
+  }
+
   return {
     status: 200,
     body: {
       success: true,
-      data: adventDays
+      data: allDays
     }
   };
 };

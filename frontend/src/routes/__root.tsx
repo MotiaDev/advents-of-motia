@@ -1,8 +1,9 @@
 import { createRootRouteWithContext, Outlet, Link } from '@tanstack/react-router';
 import { QueryClient } from '@tanstack/react-query';
-import { Gift } from 'lucide-react';
+import { Gift, Moon, Sun, Users, Github, Book } from 'lucide-react';
 import '../styles/layout.css';
 import { useEffect, useState } from 'react';
+import { useTheme } from '../context/ThemeContext';
 
 interface RouterContext {
   queryClient: QueryClient;
@@ -48,6 +49,20 @@ function Snowfall() {
   );
 }
 
+function ThemeToggle() {
+  const { theme, toggleTheme } = useTheme();
+  return (
+    <button 
+      onClick={toggleTheme} 
+      className="theme-toggle" 
+      aria-label="Toggle theme"
+      title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+    >
+      {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+    </button>
+  );
+}
+
 function RootComponent() {
   return (
     <div className="app">
@@ -57,18 +72,33 @@ function RootComponent() {
         <div className="container">
           <nav className="nav">
             <Link to="/" className="logo">
-              <Gift className="logo-icon" size={28} color="var(--color-christmas-red)" />
+              <Gift className="logo-icon" size={28} />
               <span className="logo-text">
-                Advent of <span className="gradient-text">Motia</span>
+                Advent of <span className="gradient-text">Backends</span>
               </span>
             </Link>
+            
             <div className="nav-links">
               <a href="https://www.motia.dev/docs" target="_blank" rel="noopener noreferrer" className="nav-link">
                 Docs
               </a>
-              <a href="https://github.com/MotiaDev/motia" target="_blank" rel="noopener noreferrer" className="nav-link">
-                GitHub
+              <a href="https://github.com/MotiaDev/motia" target="_blank" rel="noopener noreferrer" className="nav-link icon-link">
+                <Github size={18} />
+                <span>GitHub</span>
               </a>
+
+              <a 
+                href="https://discord.gg/motia" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn-join"
+                title="Join the group and build with more 1000s like you."
+              >
+                <Users size={16} />
+                <span>Join Community</span>
+              </a>
+
+              <ThemeToggle />
             </div>
           </nav>
         </div>
@@ -81,7 +111,7 @@ function RootComponent() {
       <footer className="footer">
         <div className="container">
           <p className="footer-message">
-            Built with 🎄 <span className="gradient-text">Holiday Spirit</span>
+            Built with <span className="gradient-text">Holiday Spirit</span>
           </p>
           <p className="footer-powered-by">
             Powered by <a href="https://www.motia.dev" target="_blank" rel="noopener noreferrer" className="text-gold">Motia</a> & <a href="https://tanstack.com" target="_blank" rel="noopener noreferrer" className="text-muted-link">TanStack</a>

@@ -18,7 +18,7 @@ function HomeComponent() {
     return (
       <div className="container">
         <div className="error-message glass-panel">
-          <h2>❌ Error Loading Calendar</h2>
+          <h2>Error Loading Calendar</h2>
           <p>{error instanceof Error ? error.message : 'Failed to load advent days'}</p>
         </div>
       </div>
@@ -30,59 +30,91 @@ function HomeComponent() {
       <section className="hero animate-fade-in">
         <h1 className="hero-title">
           <span className="hero-title-main">Welcome to the</span>
-          <span className="hero-title-sub">Advent of <span className="gradient-text-motia">Motia</span></span>
+          <span className="hero-title-sub">Advent of <span className="gradient-text">Backends</span></span>
         </h1>
+        
+        {/* Subheader badge with Motia logo */}
+        <div className="hero-badge">
+          <img src="https://www.motia.dev/icon.png" alt="Motia" className="hero-badge-logo" />
+          <span>Join us for 30 days of Motia coding!</span>
+        </div>
+        
         <p className="hero-description">
-          Embark on a magical journey through 30 days of backend innovation. 
-          Unwrap a new powerful example each day and discover how Motia brings joy to backend development. 🎄✨
+          Every day, we're sharing a new, ready-to-run backend example.<br/>
+          See how easy (and fun) it is to build with Motia. 🎄✨
         </p>
       </section>
 
       {isLoading ? (
         <div className="days-grid">
-          {[1, 2, 3, 4, 5, 6, 7].map((n) => (
+          {Array.from({ length: 12 }).map((_, n) => (
             <div key={n} className="day-card loading">
               <div className="day-card-content">
-                <div className="day-number skeleton"></div>
+                <div className="skeleton"></div>
               </div>
             </div>
           ))}
         </div>
       ) : (
         <div className="days-grid">
-          {data?.data?.map((day, index) => (
-            <Link
-              key={day.day}
-              to="/day/$dayNumber"
-              params={{ dayNumber: day.day.toString() }}
-              className="day-card"
-              style={{ animationDelay: `${index * 0.05}s` }}
-            >
-              <div className="day-card-ribbon"></div>
-              <div className="day-card-content">
-                <div className="day-header">
-                  <span className="day-number">Day {day.day}</span>
-                  {day.unlocked ? (
-                    <div className="flex items-center gap-2">
-                      <Sparkles size={14} className="text-gold opacity-70" />
-                      <Unlock size={18} className="text-gold" />
+          {data?.data?.map((day, index) => {
+            const isLocked = !day.unlocked;
+            
+            if (isLocked) {
+              return (
+                <div 
+                  key={day.day} 
+                  className="day-card locked"
+                  style={{ animationDelay: `${Math.min(index * 0.05, 1)}s` }}
+                >
+                  <div className="day-card-ribbon locked"></div>
+                  <div className="day-card-content">
+                    <div className="day-header">
+                      <span className="day-number">Day {day.day}</span>
+                      <Lock size={18} className="day-lock-icon" />
                     </div>
-                  ) : (
-                    <Lock size={18} className="text-muted" />
-                  )}
+                    
+                    <h3 className="day-title">{day.title}</h3>
+                    <p className="day-description">{day.description}</p>
+                    
+                    <div className="day-footer">
+                      <span className="unwrap-btn locked">
+                        Unwrap Magic <Gift size={14} />
+                      </span>
+                    </div>
+                  </div>
                 </div>
+              );
+            }
+
+            return (
+              <Link
+                key={day.day}
+                to="/day/$dayNumber"
+                params={{ dayNumber: day.day.toString() }}
+                className="day-card"
+                style={{ animationDelay: `${Math.min(index * 0.05, 1)}s` }}
+              >
+                <div className="day-card-ribbon"></div>
                 
-                <h3 className="day-title">{day.title}</h3>
-                <p className="day-description">{day.description}</p>
-                
-                <div className="day-footer">
-                  <span className="read-more">
-                    Unwrap Magic <Gift size={14} className="ml-1" />
-                  </span>
+                <div className="day-card-content">
+                  <div className="day-header">
+                    <span className="day-number">Day {day.day}</span>
+                    <Unlock size={18} className="day-unlock-icon" />
+                  </div>
+                  
+                  <h3 className="day-title">{day.title}</h3>
+                  <p className="day-description">{day.description}</p>
+                  
+                  <div className="day-footer">
+                    <span className="unwrap-btn">
+                      Unwrap Magic <Gift size={14} />
+                    </span>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            );
+          })}
         </div>
       )}
 

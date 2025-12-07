@@ -1,13 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Colors - Dark Mode (Default) */
+  --bg-primary: #020617;
+  --bg-secondary: #0f172a;
+  --bg-card: rgba(30, 41, 59, 0.7);
+  --bg-card-hover: rgba(51, 65, 85, 0.8);
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  
+  --header-bg: rgba(2, 6, 23, 0.95);
+  --border-color: rgba(148, 163, 184, 0.1);
+  
+  --christmas-red: #c41e3a;
+  --christmas-green: #165b33;
+  --christmas-gold: #fbbf24;
+  --christmas-cream: #f8fafc;
+  
+  --gradient-festive: linear-gradient(135deg, #c41e3a 0%, #991b1b 100%);
+  --gradient-motia: linear-gradient(135deg, #a855f7 0%, #d946ef 100%);
+  
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+
+  --pin-color: rgba(255, 255, 255, 0.3);
+
+  /* Body Background for Dark Mode */
+  --body-bg-image: 
+    radial-gradient(circle at 50% 0%, rgba(220, 38, 38, 0.15) 0%, transparent 50%),
+    linear-gradient(to bottom, #1e1b4b 0%, #020617 100%);
+}
+
+.light-mode {
+  /* Colors - Light Mode (Clean & Sharp) */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f8fafc;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  
+  --header-bg: rgba(255, 255, 255, 0.95);
+  --border-color: #e2e8f0;
+  
+  --christmas-cream: #0f172a;
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+  --pin-color: #cbd5e1;
+
+  --body-bg-image: none;
+}
+
+body {
+  background-color: var(--bg-primary);
+  background-image: var(--body-bg-image);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 5px;
+  border: 2px solid var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-md);
+}
+
+/* Christmas Lights Animation */
+@keyframes flash-1 { 
+  0%, 100% { opacity: 1; box-shadow: 0 0 10px var(--christmas-red); } 
+  50% { opacity: 0.4; box-shadow: none; } 
+}
+@keyframes flash-2 { 
+  0%, 100% { opacity: 0.4; box-shadow: none; } 
+  50% { opacity: 1; box-shadow: 0 0 10px var(--christmas-green); } 
+}
+@keyframes flash-3 { 
+  0%, 100% { opacity: 0.4; box-shadow: none; } 
+  50% { opacity: 1; box-shadow: 0 0 10px var(--christmas-gold); } 
+}
+
+/* Snow Container - Fixed Z-Index */
+.snow-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 40; /* Above background, below header */
+  overflow: hidden;
+}
+
+/* Header Styles */
 .header {
-  background: rgba(15, 23, 42, 0.4); /* More transparent */
+  background: var(--header-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid var(--border-color);
   position: sticky;
   top: 0;
   z-index: 50;
   padding: 1rem 0;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, border-color 0.3s ease;
+  /* subtle texture */
+  background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Christmas Lights decoration at top of header */
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-image: linear-gradient(90deg, 
+    var(--christmas-red) 0%, var(--christmas-red) 20%,
+    var(--christmas-green) 20%, var(--christmas-green) 40%,
+    var(--christmas-gold) 40%, var(--christmas-gold) 60%,
+    var(--christmas-red) 60%, var(--christmas-red) 80%,
+    var(--christmas-green) 80%, var(--christmas-green) 100%
+  );
+  background-size: 50px 4px;
+  opacity: 0.8;
 }
 
 .nav {
@@ -22,7 +182,7 @@
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
-  color: white;
+  color: var(--text-primary);
   font-weight: 700;
   font-size: 1.25rem;
   font-family: 'Mountains of Christmas', cursive;
@@ -41,10 +201,6 @@
   flex-shrink: 0;
 }
 
-.logo-text {
-  white-space: nowrap;
-}
-
 .nav-links {
   display: flex;
   gap: 1.5rem;
@@ -52,34 +208,155 @@
 }
 
 .nav-link {
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-secondary);
   text-decoration: none;
   font-weight: 500;
   font-size: 0.875rem;
   transition: all 0.2s ease;
   position: relative;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .nav-link:hover {
+  color: var(--text-primary);
+}
+
+.icon-link {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* Join Button */
+.btn-join {
+  background: var(--christmas-red);
   color: white;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(196, 30, 58, 0.3);
 }
 
-.nav-link::after {
-  content: '';
+.btn-join:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(196, 30, 58, 0.4);
+  filter: brightness(1.1);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+/* Footer */
+.footer {
+  margin-top: auto;
+  padding: 4rem 0;
+  text-align: center;
+  background: linear-gradient(to top, var(--bg-secondary) 0%, transparent 100%);
+  border-top: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Easter Egg: Christmas Tree in Footer */
+.footer::before {
+  content: '🎄';
   position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--christmas-gold);
-  transition: width 0.3s ease;
-  box-shadow: 0 0 5px var(--christmas-gold);
+  bottom: 2rem;
+  left: 2rem;
+  font-size: 3rem;
+  opacity: 0.2;
+  transform: rotate(-10deg);
+  filter: blur(1px);
 }
 
-.nav-link:hover::after {
-  width: 100%;
+.footer::after {
+  content: '🎄';
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  font-size: 3rem;
+  opacity: 0.2;
+  transform: rotate(10deg);
+  filter: blur(1px);
+}
+
+.footer-message {
+  font-family: 'Mountains of Christmas', cursive;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: var(--christmas-cream);
+  position: relative;
+  z-index: 1;
+}
+
+.footer-powered-by {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-powered-by a {
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.text-gold {
+  color: var(--christmas-gold) !important;
+}
+
+.text-muted-link {
+  color: var(--text-muted) !important;
+}
+
+.text-muted-link:hover {
+  color: var(--text-primary) !important;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: var(--christmas-gold);
+  background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.light-mode .gradient-text {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Mobile Responsiveness */
@@ -93,79 +370,19 @@
     gap: 0.4rem;
   }
 
-  .logo-icon {
-    width: 20px;
-    height: 20px;
-  }
-
-  .nav-links {
-    gap: 1rem;
-  }
-
-  .nav-link {
-    font-size: 0.8rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .logo {
-    font-size: 1rem;
-  }
-
-  .logo-text {
-    max-width: 140px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
   .nav-links {
     gap: 0.75rem;
   }
-
-  .nav-link {
-    font-size: 0.75rem;
+  
+  .btn-join span, .icon-link span {
+    display: none;
   }
-}
-
-.footer {
-  margin-top: auto;
-  padding: 4rem 0;
-  text-align: center;
-  background: linear-gradient(to top, rgba(2, 6, 23, 0.8) 0%, transparent 100%);
-  border-top: 1px solid rgba(255, 255, 255, 0.03);
-}
-
-.footer-message {
-  font-family: 'Mountains of Christmas', cursive;
-  font-size: 1.75rem;
-  margin-bottom: 1rem;
-  color: var(--christmas-cream);
-}
-
-.footer-powered-by {
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.footer-powered-by a {
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.2s ease;
-}
-
-.text-gold {
-  color: var(--christmas-gold) !important;
-  text-shadow: 0 0 10px rgba(251, 191, 36, 0.2);
-}
-
-.text-muted-link {
-  color: rgba(255, 255, 255, 0.5) !important;
-}
-
-.text-muted-link:hover {
-  color: white !important;
+  
+  .btn-join {
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    justify-content: center;
+  }
 }

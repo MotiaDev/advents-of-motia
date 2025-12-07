@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from '@tanstack/react-router';
 import { useQuery } from '@tanstack/react-query';
 import { adventDaysQueryOptions } from '../queries/adventQueries';
-import { Lock, Unlock, ArrowRight, Gift, Sparkles } from 'lucide-react';
+import { Lock, Unlock, Gift, Sparkles } from 'lucide-react';
 import '../styles/home.css';
 
 export const Route = createFileRoute('/')({

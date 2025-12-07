@@ -1,6 +1,6 @@
 import { createRootRouteWithContext, Outlet, Link } from '@tanstack/react-router';
 import { QueryClient } from '@tanstack/react-query';
-import { Gift, Moon, Sun, Users, Github, Book } from 'lucide-react';
+import { Gift, Moon, Sun, Users, Github } from 'lucide-react';
 import '../styles/layout.css';
 import { useEffect, useState } from 'react';
 import { useTheme } from '../context/ThemeContext';

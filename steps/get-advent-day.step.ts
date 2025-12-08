@@ -96,6 +96,18 @@ export const handler = async (req, { logger }) => {
       features: ['Complex Workflows', 'Code Generation', 'Agent Collaboration', 'Creative AI'],
       githubExample: 'multi-agent-game-generation',
       githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/multi-agent-game-generation'
+    },
+    {
+      day: 8,
+      title: 'AI Code Reviewer Agent',
+      description: 'Automated code reviews powered by AI.',
+      tweetId: '1998080301214343202',
+      unlocked: true,
+      date: '2025-12-08',
+      content: 'Supercharge your code review process. This AI-powered agent automatically reviews pull requests, providing insightful feedback on code quality, potential bugs, and best practices. Built with Motia to orchestrate the review workflow seamlessly.',
+      features: ['GitHub Integration', 'AI Code Analysis', 'PR Automation', 'Code Quality'],
+      githubExample: 'ai-code-reviewer-agent',
+      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-code-reviewer-agent'
     }
   ];
 

@@ -91,14 +91,24 @@ export const handler = async (req, { logger }) => {
       date: 'Monday',
       githubExample: 'ai-code-reviewer-agent',
       githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-code-reviewer-agent'
+    },
+    {
+      day: 9,
+      title: 'AI App Generator',
+      description: 'Generate full applications with AI.',
+      tweetId: '1998431832866697358',
+      unlocked: true,
+      date: 'Tuesday',
+      githubExample: 'ai-app-generator',
+      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-app-generator'
     }
   ];
 
-  // Generate remaining days 9-30
+  // Generate remaining days 10-30
   const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
   const allDays = [...existingDays];
 
-  for (let i = 9; i <= 30; i++) {
+  for (let i = 10; i <= 30; i++) {
     const dayOfWeek = daysOfWeek[(i - 1) % 7];
     allDays.push({
       day: i,

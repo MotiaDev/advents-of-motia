@@ -108,6 +108,18 @@ export const handler = async (req, { logger }) => {
       features: ['GitHub Integration', 'AI Code Analysis', 'PR Automation', 'Code Quality'],
       githubExample: 'ai-code-reviewer-agent',
       githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-code-reviewer-agent'
+    },
+    {
+      day: 9,
+      title: 'AI App Generator',
+      description: 'Generate full applications with AI.',
+      tweetId: '1998431832866697358',
+      unlocked: true,
+      date: '2025-12-09',
+      content: 'Build entire applications from natural language descriptions. This powerful example uses AI to generate complete app scaffolding, including routes, components, and business logic. Motia orchestrates the multi-step generation process for consistent, high-quality output.',
+      features: ['App Scaffolding', 'Code Generation', 'Natural Language', 'Full-Stack Generation'],
+      githubExample: 'ai-app-generator',
+      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-app-generator'
     }
   ];
 

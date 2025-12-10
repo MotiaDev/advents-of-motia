@@ -1,3 +1,5 @@
+import { Handlers } from 'motia';
+
 export const config = {
   name: 'GetAdventDays',
   type: 'api',
@@ -8,7 +10,7 @@ export const config = {
   virtualEmits: [{ topic: 'day.selected', label: 'User selects a day' }]
 };
 
-export const handler = async (req, { logger }) => {
+export const handler: Handlers['GetAdventDays'] = async (req, { logger }) => {
   logger.info('Fetching all advent days');
   
   const existingDays = [
@@ -20,7 +22,7 @@ export const handler = async (req, { logger }) => {
       unlocked: true,
       date: 'Monday',
       githubExample: 'github-notion-sync',
-      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/github-notion-sync'
+      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/integrations/github/github-notion-sync'
     },
     {
       day: 2,
@@ -30,7 +32,7 @@ export const handler = async (req, { logger }) => {
       unlocked: true,
       date: 'Tuesday',
       githubExample: 'ai-chat-agent-with-memory',
-      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-chat-agent-with-memory'
+      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-agents/chat-agents/ai-chat-agent-with-memory'
     },
     {
       day: 3,
@@ -40,7 +42,7 @@ export const handler = async (req, { logger }) => {
       unlocked: true,
       date: 'Wednesday',
       githubExample: 'ai-vs-ai-tictactoe-game',
-      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-vs-ai-tictactoe-game'
+      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-agents/multi-agent-systems/ai-vs-ai-tictactoe-game'
     },
     {
       day: 4,
@@ -50,7 +52,7 @@ export const handler = async (req, { logger }) => {
       unlocked: true,
       date: 'Thursday',
       githubExample: 'telegram-gmail-automation',
-      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/telegram-gmail-automation'
+      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/integrations/communication/telegram-gmail-automation'
     },
     {
       day: 5,
@@ -60,7 +62,7 @@ export const handler = async (req, { logger }) => {
       unlocked: true,
       date: 'Friday',
       githubExample: 'airbnb-property-guest-assistant',
-      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/airbnb-property-guest-assistant'
+      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-agents/specialized-agents/airbnb-property-guest-assistant'
     },
     {
       day: 6,
@@ -70,7 +72,7 @@ export const handler = async (req, { logger }) => {
       unlocked: true,
       date: 'Saturday',
       githubExample: 'motia-langgraph-lead-scoring',
-      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/motia-langgraph-lead-scoring'
+      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-agents/specialized-agents/motia-langgraph-lead-scoring'
     },
     {
       day: 7,
@@ -80,7 +82,7 @@ export const handler = async (req, { logger }) => {
       unlocked: true,
       date: 'Sunday',
       githubExample: 'multi-agent-game-generation',
-      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/multi-agent-game-generation'
+      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-agents/multi-agent-systems/multi-agent-game-generation'
     },
     {
       day: 8,
@@ -90,7 +92,7 @@ export const handler = async (req, { logger }) => {
       unlocked: true,
       date: 'Monday',
       githubExample: 'ai-code-reviewer-agent',
-      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-code-reviewer-agent'
+      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-agents/specialized-agents/ai-code-reviewer-agent'
     },
     {
       day: 9,
@@ -100,7 +102,7 @@ export const handler = async (req, { logger }) => {
       unlocked: true,
       date: 'Tuesday',
       githubExample: 'ai-app-generator',
-      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-app-generator'
+      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-agents/multi-agent-systems/ai-app-generator'
     }
   ];
 

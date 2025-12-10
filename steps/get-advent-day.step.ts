@@ -1,3 +1,5 @@
+import { Handlers } from 'motia';
+
 export const config = {
   name: 'GetAdventDay',
   type: 'api',
@@ -8,7 +10,7 @@ export const config = {
   virtualSubscribes: ['day.selected']
 };
 
-export const handler = async (req, { logger }) => {
+export const handler: Handlers['GetAdventDay'] = async (req, { logger }) => {
   const dayNumber = parseInt(req.pathParams.day);
   logger.info(`Fetching advent day ${dayNumber}`);
   
@@ -23,7 +25,7 @@ export const handler = async (req, { logger }) => {
       content: 'Keep your project management in sync! This example demonstrates how to automatically create Notion pages when new GitHub issues are opened. It showcases Motia\'s ability to integrate external APIs and handle webhook events.',
       features: ['Webhook Integration', 'GitHub API', 'Notion API', 'Event Processing'],
       githubExample: 'github-notion-sync',
-      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/github-notion-sync'
+      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/integrations/github/github-notion-sync'
     },
     {
       day: 2,
@@ -35,7 +37,7 @@ export const handler = async (req, { logger }) => {
       content: 'Create intelligent conversational agents. This example uses Motia\'s state management to persist chat history, allowing the AI to maintain context across multiple interactions.',
       features: ['State Management', 'OpenAI Integration', 'Context Persistence', 'Chat Interface'],
       githubExample: 'ai-chat-agent-with-memory',
-      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-chat-agent-with-memory'
+      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-agents/chat-agents/ai-chat-agent-with-memory'
     },
     {
       day: 3,
@@ -47,7 +49,7 @@ export const handler = async (req, { logger }) => {
       content: 'A fun demonstration of multi-agent interaction. Two separate AI agents play Tic-Tac-Toe against each other, with Motia orchestrating the game state and turn-taking logic.',
       features: ['Multi-Agent System', 'Game Logic', 'State Synchronization', 'Event Driven'],
       githubExample: 'ai-vs-ai-tictactoe-game',
-      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-vs-ai-tictactoe-game'
+      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-agents/multi-agent-systems/ai-vs-ai-tictactoe-game'
     },
     {
       day: 4,
@@ -59,7 +61,7 @@ export const handler = async (req, { logger }) => {
       content: 'Streamline your communications. This example listens for incoming Telegram messages and automatically forwards important ones to Gmail, or vice-versa, showing Motia\'s power in connecting different communication channels.',
       features: ['Telegram Bot API', 'Gmail API', 'Message Routing', 'Automation'],
       githubExample: 'telegram-gmail-automation',
-      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/telegram-gmail-automation'
+      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/integrations/communication/telegram-gmail-automation'
     },
     {
       day: 5,
@@ -71,7 +73,7 @@ export const handler = async (req, { logger }) => {
       content: 'Enhance guest experience with automation. This assistant automatically responds to common guest inquiries, sends check-in instructions, and manages property details using AI.',
       features: ['Airbnb Integration', 'Automated Responses', 'Guest Management', 'AI Assistant'],
       githubExample: 'airbnb-property-guest-assistant',
-      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/airbnb-property-guest-assistant'
+      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-agents/specialized-agents/airbnb-property-guest-assistant'
     },
     {
       day: 6,
@@ -83,7 +85,7 @@ export const handler = async (req, { logger }) => {
       content: 'Optimize your sales pipeline. Using LangGraph integration, this example analyzes lead data to assign quality scores, helping sales teams focus on the most promising prospects.',
       features: ['LangGraph Integration', 'Lead Scoring', 'Data Analysis', 'Sales Automation'],
       githubExample: 'motia-langgraph-lead-scoring',
-      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/motia-langgraph-lead-scoring'
+      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-agents/specialized-agents/motia-langgraph-lead-scoring'
     },
     {
       day: 7,
@@ -95,7 +97,7 @@ export const handler = async (req, { logger }) => {
       content: 'Pushing the boundaries of generative AI. This complex example coordinates multiple specialized AI agents (designer, coder, tester) to collaboratively generate and refine simple games.',
       features: ['Complex Workflows', 'Code Generation', 'Agent Collaboration', 'Creative AI'],
       githubExample: 'multi-agent-game-generation',
-      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/multi-agent-game-generation'
+      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-agents/multi-agent-systems/multi-agent-game-generation'
     },
     {
       day: 8,
@@ -107,7 +109,7 @@ export const handler = async (req, { logger }) => {
       content: 'Supercharge your code review process. This AI-powered agent automatically reviews pull requests, providing insightful feedback on code quality, potential bugs, and best practices. Built with Motia to orchestrate the review workflow seamlessly.',
       features: ['GitHub Integration', 'AI Code Analysis', 'PR Automation', 'Code Quality'],
       githubExample: 'ai-code-reviewer-agent',
-      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-code-reviewer-agent'
+      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-agents/specialized-agents/ai-code-reviewer-agent'
     },
     {
       day: 9,
@@ -119,7 +121,7 @@ export const handler = async (req, { logger }) => {
       content: 'Build entire applications from natural language descriptions. This powerful example uses AI to generate complete app scaffolding, including routes, components, and business logic. Motia orchestrates the multi-step generation process for consistent, high-quality output.',
       features: ['App Scaffolding', 'Code Generation', 'Natural Language', 'Full-Stack Generation'],
       githubExample: 'ai-app-generator',
-      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-app-generator'
+      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-agents/multi-agent-systems/ai-app-generator'
     }
   ];
 

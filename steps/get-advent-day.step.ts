@@ -122,6 +122,18 @@ export const handler: Handlers['GetAdventDay'] = async (req, { logger }) => {
       features: ['App Scaffolding', 'Code Generation', 'Natural Language', 'Full-Stack Generation'],
       githubExample: 'ai-app-generator',
       githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-agents/multi-agent-systems/ai-app-generator'
+    },
+    {
+      day: 10,
+      title: 'AI ReACT Agent',
+      description: 'Reasoning + acting with structured tool use.',
+      tweetId: '1998831335331475842',
+      unlocked: true,
+      date: '2025-12-10',
+      content: 'Build a ReACT-style agent that reasons step-by-step and executes actions through tool calls. This example shows how Motia coordinates the reasoning loop, tool invocation, and result synthesis for robust, explainable outputs.',
+      features: ['ReACT Loop', 'Tool Use', 'Step-by-Step Reasoning', 'Observations & Actions'],
+      githubExample: 'ai-ReACT-agent',
+      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-agents/specialized-agents/ai-ReACT-agent'
     }
   ];
 

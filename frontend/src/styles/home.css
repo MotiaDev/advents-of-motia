@@ -337,7 +337,8 @@
   width: 36px;
   height: 50px;
   background: var(--christmas-red);
-  z-index: 10;
+  /* Keep ribbon decorative (behind text/icons) */
+  z-index: 1;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   /* Notch at bottom */
   clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 85%, 0 100%);
@@ -361,6 +362,8 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
+  position: relative;
+  z-index: 11;
 }
 
 .day-number {
@@ -373,11 +376,17 @@
 .day-unlock-icon {
   color: var(--christmas-gold);
   opacity: 0.8;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .day-lock-icon {
   color: var(--text-muted);
   opacity: 0.6;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .day-title {

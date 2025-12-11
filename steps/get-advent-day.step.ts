@@ -134,6 +134,18 @@ export const handler: Handlers['GetAdventDay'] = async (req, { logger }) => {
       features: ['ReACT Loop', 'Tool Use', 'Step-by-Step Reasoning', 'Observations & Actions'],
       githubExample: 'ai-ReACT-agent',
       githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-agents/specialized-agents/ai-ReACT-agent'
+    },
+    {
+      day: 11,
+      title: 'AI Planning Agent',
+      description: 'Plan and execute multi-step tasks with AI.',
+      tweetId: '1999217624312610824',
+      unlocked: true,
+      date: '2025-12-11',
+      content: 'Create a planning agent that decomposes goals into ordered actions, selects the right tools, and executes them with feedback. See how Motia orchestrates planning, execution, and state updates for reliable multi-step outcomes.',
+      features: ['Task Decomposition', 'Tool Selection', 'Execution Flow', 'Feedback Loop'],
+      githubExample: 'ai-planning-agent',
+      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-agents/specialized-agents/ai-planning-agent'
     }
   ];
 

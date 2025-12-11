@@ -99,6 +99,171 @@
   line-height: 1.6;
 }
 
+/* Examples Showcase */
+.examples-showcase {
+  margin: 2.5rem 0 4rem;
+  padding: 1.75rem 1.5rem;
+  border-radius: 1.5rem;
+  /* Dark Christmas Green tint background for festive feel */
+  background: linear-gradient(to bottom right, rgba(22, 91, 51, 0.15), rgba(2, 6, 23, 0.6));
+  border: 1px solid rgba(22, 91, 51, 0.3);
+  box-shadow: 0 0 20px rgba(22, 91, 51, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Festive top border accent */
+.examples-showcase::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--christmas-red), var(--christmas-gold), var(--christmas-green), transparent);
+  opacity: 0.7;
+}
+
+.examples-showcase-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.examples-showcase-title {
+  margin: 0;
+  font-size: 2rem;
+  font-family: 'Mountains of Christmas', cursive;
+  color: var(--christmas-cream);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.examples-showcase-subtitle {
+  margin: 0.25rem 0 0;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 52ch;
+}
+
+.examples-showcase-link {
+  color: var(--christmas-gold);
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  background: rgba(251, 191, 36, 0.05);
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.examples-showcase-link:hover {
+  background: rgba(251, 191, 36, 0.15);
+  border-color: var(--christmas-gold);
+  transform: translateY(-1px);
+  box-shadow: 0 0 10px rgba(251, 191, 36, 0.1);
+  text-decoration: none;
+}
+
+.light-mode .examples-showcase-link:hover {
+  background: rgba(251, 191, 36, 0.1);
+}
+
+.examples-marquee {
+  position: relative;
+  overflow: hidden;
+  padding: 0.5rem 0;
+  /* Fade edges */
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+}
+
+.examples-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: max-content;
+  will-change: transform;
+  transform: translateZ(0);
+  animation-name: examples-marquee-left;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.examples-marquee[data-direction='right'] .examples-marquee-track {
+  animation-name: examples-marquee-right;
+}
+
+.examples-marquee:hover .examples-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes examples-marquee-left {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes examples-marquee-right {
+  from { transform: translate3d(-50%, 0, 0); }
+  to { transform: translate3d(0, 0, 0); }
+}
+
+.example-chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding: 0.6rem 0.85rem;
+  border-radius: 999px;
+  text-decoration: none;
+  /* Subtle Christmas Green tint background and Gold border */
+  border: 1px solid rgba(251, 191, 36, 0.15);
+  background: rgba(22, 91, 51, 0.2);
+  color: var(--christmas-cream);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+
+.light-mode .example-chip {
+  background: rgba(22, 91, 51, 0.05);
+  border-color: rgba(22, 91, 51, 0.1);
+  color: var(--text-primary);
+}
+
+.example-chip:hover {
+  transform: translateY(-2px);
+  /* Shift to Red tint on hover for red/green/gold interplay */
+  background: rgba(196, 30, 58, 0.15);
+  border-color: var(--christmas-gold);
+  box-shadow: 0 0 15px rgba(251, 191, 36, 0.2);
+}
+
+.example-chip-title {
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.example-chip-meta {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6); /* Slightly lighter for readability on dark green */
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .examples-marquee {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .examples-marquee-track {
+    animation: none !important;
+    width: auto;
+    padding-bottom: 0.25rem;
+  }
+}
+
 .days-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -311,4 +476,11 @@
 @media (max-width: 768px) {
   .hero-title-sub { font-size: 3rem; }
   .days-grid { grid-template-columns: 1fr; }
+  .examples-showcase-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .examples-showcase-title {
+    font-size: 1.75rem;
+  }
 }

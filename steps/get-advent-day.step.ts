@@ -146,6 +146,18 @@ export const handler: Handlers['GetAdventDay'] = async (req, { logger }) => {
       features: ['Task Decomposition', 'Tool Selection', 'Execution Flow', 'Feedback Loop'],
       githubExample: 'ai-planning-agent',
       githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-agents/specialized-agents/ai-planning-agent'
+    },
+    {
+      day: 12,
+      title: 'AI Reflection Deep Research Agent',
+      description: 'An agent that performs deep research with reflection.',
+      tweetId: '1999518364134162817',
+      unlocked: true,
+      date: '2025-12-12',
+      content: 'Implement an advanced AI agent capable of deep research and self-reflection. This example demonstrates how to build an agent that iteratively improves its search queries and synthesizes information from multiple sources to provide comprehensive answers.',
+      features: ['Deep Research', 'Self-Reflection', 'Iterative Search', 'Information Synthesis'],
+      githubExample: 'ai-reflection-deep-research-agent',
+      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-agents/specialized-agents/ai-reflection-deep-research-agent'
     }
   ];
 

@@ -37,7 +37,7 @@ function HomeComponent() {
         {/* Subheader badge with Motia logo */}
         <div className="hero-badge">
           <img src="https://www.motia.dev/icon.png" alt="Motia" className="hero-badge-logo" />
-          <span>Join us for 30 days of Motia coding!</span>
+          <span>Join us for 30 days of Backend coding!</span>
         </div>
         
         <p className="hero-description">

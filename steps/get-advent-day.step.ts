@@ -158,6 +158,18 @@ export const handler: Handlers['GetAdventDay'] = async (req, { logger }) => {
       features: ['Deep Research', 'Self-Reflection', 'Iterative Search', 'Information Synthesis'],
       githubExample: 'ai-reflection-deep-research-agent',
       githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-agents/specialized-agents/ai-reflection-deep-research-agent'
+    },
+    {
+      day: 13,
+      title: 'Real-time Cursor Pointers',
+      description: 'Real-time collaboration with cursor pointers.',
+      tweetId: '2000594456001876101',
+      unlocked: true,
+      date: '2025-12-13',
+      content: 'Add real-time collaboration to your apps! This example demonstrates how to implement live cursor pointers using Motia\'s real-time capabilities, perfect for collaborative tools and multiplayer experiences.',
+      features: ['Real-time Streaming', 'WebSockets/SSE', 'Multiplayer', 'Cursor Tracking'],
+      githubExample: 'real-time-cursor-pointers',
+      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/getting-started/real-time-cursor-pointers'
     }
   ];
 

@@ -133,14 +133,24 @@ export const handler: Handlers['GetAdventDays'] = async (req, { logger }) => {
       date: 'Friday',
       githubExample: 'ai-reflection-deep-research-agent',
       githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-agents/specialized-agents/ai-reflection-deep-research-agent'
+    },
+    {
+      day: 13,
+      title: 'Real-time Cursor Pointers',
+      description: 'Real-time collaboration with cursor pointers.',
+      tweetId: '2000594456001876101',
+      unlocked: true,
+      date: 'Saturday',
+      githubExample: 'real-time-cursor-pointers',
+      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/getting-started/real-time-cursor-pointers'
     }
   ];
 
-  // Generate remaining days 13-30
+  // Generate remaining days 14-30
   const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
   const allDays = [...existingDays];
 
-  for (let i = 13; i <= 30; i++) {
+  for (let i = 14; i <= 30; i++) {
     const dayOfWeek = daysOfWeek[(i - 1) % 7];
     allDays.push({
       day: i,

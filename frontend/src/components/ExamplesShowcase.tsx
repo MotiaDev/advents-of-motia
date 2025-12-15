@@ -25,7 +25,7 @@ export const ExamplesShowcase: React.FC = () => {
       <div className="examples-showcase-header">
         <div>
           <h2 className="examples-showcase-title">
-            Explore <span className="gradient-text">{exampleCount}+</span> Motia examples
+            Explore <span className="gradient-text">{exampleCount}+</span> Backend Examples
           </h2>
           <p className="examples-showcase-subtitle">
             A scrolling peek into the full catalog — open any example on GitHub.
@@ -73,6 +73,7 @@ const MarqueeRow: React.FC<{
     </div>
   )
 }
+
 
 
 

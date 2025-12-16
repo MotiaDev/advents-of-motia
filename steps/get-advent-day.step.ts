@@ -170,6 +170,18 @@ export const handler: Handlers['GetAdventDay'] = async (req, { logger }) => {
       features: ['Real-time Streaming', 'WebSockets/SSE', 'Multiplayer', 'Cursor Tracking'],
       githubExample: 'real-time-cursor-pointers',
       githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/getting-started/real-time-cursor-pointers'
+    },
+    {
+      day: 14,
+      title: 'ProspectAI - Sales Intelligence',
+      description: 'AI-powered sales intelligence and automation platform.',
+      tweetId: '2000959418679353776',
+      unlocked: true,
+      date: '2025-12-14',
+      content: 'Transform prospect research from hours to minutes! Upload CSVs to get AI-powered fit scores (0-100), collect 15+ signals including funding, news, and hiring patterns, generate personalized email drafts, and receive real-time Slack alerts. Built with Motia\'s event-driven architecture for seamless orchestration, parallel signal collection, and automatic retries.',
+      features: ['AI Fit Scoring', 'Signal Collection', 'Email Generation', 'Real-time Alerts', 'Natural Language Queries'],
+      githubExample: 'prospect-ai',
+      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-agents/specialized-agents/prospect-ai'
     }
   ];
 

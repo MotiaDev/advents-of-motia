@@ -143,14 +143,24 @@ export const handler: Handlers['GetAdventDays'] = async (req, { logger }) => {
       date: 'Saturday',
       githubExample: 'real-time-cursor-pointers',
       githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/getting-started/real-time-cursor-pointers'
+    },
+    {
+      day: 14,
+      title: 'ProspectAI - Sales Intelligence',
+      description: 'AI-powered sales intelligence and automation platform.',
+      tweetId: '2000959418679353776',
+      unlocked: true,
+      date: 'Sunday',
+      githubExample: 'prospect-ai',
+      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-agents/specialized-agents/prospect-ai'
     }
   ];
 
-  // Generate remaining days 14-30
+  // Generate remaining days 15-30
   const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
   const allDays = [...existingDays];
 
-  for (let i = 14; i <= 30; i++) {
+  for (let i = 15; i <= 30; i++) {
     const dayOfWeek = daysOfWeek[(i - 1) % 7];
     allDays.push({
       day: i,

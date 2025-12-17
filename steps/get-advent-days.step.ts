@@ -156,8 +156,8 @@ export const handler: Handlers['GetAdventDays'] = async (req, { logger }) => {
     },
     {
       day: 15,
-      title: 'Todo App API',
-      description: 'Complete CRUD API with TypeScript best practices.',
+      title: 'Full-Stack Todo App',
+      description: 'Complete Todo App with APIs, real-time updates, and background jobs.',
       tweetId: '2001288228431598068',
       unlocked: true,
       date: 'Monday',

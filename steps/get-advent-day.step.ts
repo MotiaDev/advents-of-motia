@@ -182,6 +182,18 @@ export const handler: Handlers['GetAdventDay'] = async (req, { logger }) => {
       features: ['AI Fit Scoring', 'Signal Collection', 'Email Generation', 'Real-time Alerts', 'Natural Language Queries'],
       githubExample: 'prospect-ai',
       githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/ai-agents/specialized-agents/prospect-ai'
+    },
+    {
+      day: 15,
+      title: 'Todo App API',
+      description: 'Complete CRUD API with TypeScript best practices.',
+      tweetId: '2001288228431598068',
+      unlocked: true,
+      date: '2025-12-15',
+      content: 'Build a production-ready Todo API from scratch! This example demonstrates CRUD operations, input validation with Zod schemas, proper error handling, and TypeScript best practices. Perfect for learning API fundamentals with Motia\'s type-safe approach and understanding how to structure backend endpoints effectively.',
+      features: ['CRUD Operations', 'Zod Validation', 'Error Handling', 'TypeScript Best Practices'],
+      githubExample: 'todo-app',
+      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/foundational/api-patterns/todo-app'
     }
   ];
 

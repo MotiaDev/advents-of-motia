@@ -194,6 +194,18 @@ export const handler: Handlers['GetAdventDay'] = async (req, { logger }) => {
       features: ['Full-Stack App with UI', 'Real-time Streaming', 'Background Jobs', 'Cron Schedules', 'CRUD APIs', 'Visual Debugging'],
       githubExample: 'todo-app',
       githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/foundational/api-patterns/todo-app'
+    },
+    {
+      day: 16,
+      title: 'Git History Visualizer',
+      description: 'Production app visualizing GitHub repos with interactive D3.js graphs.',
+      tweetId: '2001698787421573256',
+      unlocked: true,
+      date: '2025-12-16',
+      content: 'A production-grade application deployed at git-history.com that visualizes any GitHub repository with stunning interactive graphs! Explore repository structures with force-directed graphs, circle-packing views, animated commit timelines, and star history charts. Features embeddable SVG charts for READMEs, multi-repo comparisons, and a Chrome extension. Built with Motia backend + React + D3.js, showcasing advanced data visualization, API design, and real-world deployment patterns.',
+      features: ['D3.js Force Graphs', 'Star History Charts', 'Commit Timeline Animation', 'Embeddable SVGs', 'Chrome Extension', 'Production Deployed'],
+      githubExample: 'visualize-git',
+      githubUrl: 'https://github.com/MotiaDev/visualize-git'
     }
   ];
 

@@ -206,6 +206,18 @@ export const handler: Handlers['GetAdventDay'] = async (req, { logger }) => {
       features: ['D3.js Force Graphs', 'Star History Charts', 'Commit Timeline Animation', 'Embeddable SVGs', 'Chrome Extension', 'Production Deployed'],
       githubExample: 'visualize-git',
       githubUrl: 'https://github.com/MotiaDev/visualize-git'
+    },
+    {
+      day: 17,
+      title: 'Shopify WhatsApp E-commerce',
+      description: 'E-commerce automation connecting Shopify with WhatsApp messaging.',
+      tweetId: '2005679868332154934',
+      unlocked: true,
+      date: '2025-12-17',
+      content: 'Bridge your Shopify store with WhatsApp for seamless customer communication! This advanced e-commerce automation handles order notifications, abandoned cart reminders, shipping updates, and customer support directly through WhatsApp. Features webhook integrations with Shopify, automated message templates, order tracking, and customer engagement workflows. Perfect for businesses looking to enhance their customer experience with conversational commerce.',
+      features: ['Shopify Integration', 'WhatsApp Business API', 'Order Notifications', 'Abandoned Cart Recovery', 'Webhook Processing', 'Automated Messaging'],
+      githubExample: 'ecommerce-shopify-whatsapp',
+      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/advanced-use-cases/ecommerce-shopify-whatsapp'
     }
   ];
 

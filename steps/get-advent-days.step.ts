@@ -173,14 +173,24 @@ export const handler: Handlers['GetAdventDays'] = async (req, { logger }) => {
       date: 'Tuesday',
       githubExample: 'visualize-git',
       githubUrl: 'https://github.com/MotiaDev/visualize-git'
+    },
+    {
+      day: 17,
+      title: 'Shopify WhatsApp E-commerce',
+      description: 'E-commerce automation connecting Shopify with WhatsApp messaging.',
+      tweetId: '2005679868332154934',
+      unlocked: true,
+      date: 'Wednesday',
+      githubExample: 'ecommerce-shopify-whatsapp',
+      githubUrl: 'https://github.com/MotiaDev/motia-examples/tree/main/examples/advanced-use-cases/ecommerce-shopify-whatsapp'
     }
   ];
 
-  // Generate remaining days 17-30
+  // Generate remaining days 18-30
   const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
   const allDays = [...existingDays];
 
-  for (let i = 17; i <= 30; i++) {
+  for (let i = 18; i <= 30; i++) {
     const dayOfWeek = daysOfWeek[(i - 1) % 7];
     allDays.push({
       day: i,

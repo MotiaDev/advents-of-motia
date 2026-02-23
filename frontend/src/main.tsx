@@ -4,8 +4,12 @@ import { RouterProvider, createRouter } from '@tanstack/react-router';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { routeTree } from './routeTree.gen';
 import { ThemeProvider } from './context/ThemeContext';
-import { Analytics } from '@vercel/analytics/react';
+import { inject } from '@vercel/analytics';
 import './index.css';
+
+// Initialize Vercel Web Analytics
+// Note: inject() runs on the client side and does not include route support
+inject();
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -36,7 +40,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
         <RouterProvider router={router} />
-        <Analytics />
       </ThemeProvider>
     </QueryClientProvider>
   </React.StrictMode>
